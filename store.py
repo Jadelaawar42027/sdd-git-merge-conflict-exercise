@@ -9,9 +9,11 @@ def calculate_total(
 ):
     """Calculate the final total a customer pays for their cart."""
     total = subtotal
+    shipping = 5
 
     # TODO: apply your assigned feature's pricing rule here, gated behind
     # its argument (apply_discount, apply_tax, or apply_shipping)
+    total += shipping
 
     return total
 
