@@ -17,7 +17,7 @@ def calculate_total(
 
     if apply_tax:
         total += total * 0.08
-
+    # edit for pull request
     if apply_shipping:
         total += shipping
     return total
