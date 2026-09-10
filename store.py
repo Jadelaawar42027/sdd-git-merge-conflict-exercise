@@ -5,35 +5,42 @@ TODO(team): implement the pricing rule(s) assigned to you in the README.
 
 
 def calculate_total(
-    subtotal, apply_discount=False, apply_tax=False, apply_shipping=False
+    subtotal, apply_discount=True, apply_tax=False, apply_shipping=True
 ):
     """Calculate the final total a customer pays for their cart."""
     total = subtotal
     shipping = 5
 
-    # TODO: apply your assigned feature's pricing rule here, gated behind
-    # its argument (apply_discount, apply_tax, or apply_shipping)
-<<<<<<< HEAD
-    if total > 50:
-        total -= (total * 0.10)
-=======
-    total += shipping
->>>>>>> feature/shipping
+    # Apply 10% discount to carts over $50
+    if apply_discount and total > 50:
+        total -= total * 0.10
+
+    # Apply shipping fee
+    if apply_shipping:
+        total += shipping
 
     return total
 
 
 if __name__ == "__main__":
     example_subtotal = 100.0
+
     print(
-        f"Total for a ${example_subtotal:.2f} cart: ${calculate_total(example_subtotal):.2f}"
+        f"Total for a ${example_subtotal:.2f} cart: "
+        f"${calculate_total(example_subtotal):.2f}"
     )
+
     print(
-        f"Total for a ${example_subtotal:.2f} cart with discount: ${calculate_total(example_subtotal, True, False):.2f}"
+        f"Total for a ${example_subtotal:.2f} cart with discount: "
+        f"${calculate_total(example_subtotal, True, False):.2f}"
     )
+
     print(
-        f"Total for a ${example_subtotal:.2f} cart with tax: ${calculate_total(example_subtotal, False, True):.2f}"
+        f"Total for a ${example_subtotal:.2f} cart with tax: "
+        f"${calculate_total(example_subtotal, False, True):.2f}"
     )
+
     print(
-        f"Total for a ${example_subtotal:.2f} cart with discount and tax: ${calculate_total(example_subtotal, True, True):.2f}"
+        f"Total for a ${example_subtotal:.2f} cart with discount and tax: "
+        f"${calculate_total(example_subtotal, True, True):.2f}"
     )
