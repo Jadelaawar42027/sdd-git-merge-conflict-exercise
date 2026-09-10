@@ -14,7 +14,7 @@ def calculate_total(
     # its argument (apply_discount, apply_tax, or apply_shipping)
     if apply_discount and total > 50:
         total -= (total * 0.10)
-
+    # Edit for pull request
     if apply_tax:
         total += total * 0.08
     # edit for pull request
