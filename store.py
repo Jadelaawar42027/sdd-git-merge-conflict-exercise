@@ -12,7 +12,8 @@ def calculate_total(
 
     # TODO: apply your assigned feature's pricing rule here, gated behind
     # its argument (apply_discount, apply_tax, or apply_shipping)
-
+    sales_tax = 0.08 * total
+    total += sales_tax
     return total
 
 
