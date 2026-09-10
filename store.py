@@ -5,7 +5,7 @@ TODO(team): implement the pricing rule(s) assigned to you in the README.
 
 
 def calculate_total(
-    subtotal, apply_discount=True, apply_tax=True, apply_shipping=True
+    subtotal, apply_discount=False, apply_tax=False, apply_shipping=False
 ):
     """Calculate the final total a customer pays for their cart."""
     total = subtotal
